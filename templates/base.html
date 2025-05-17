@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-widht">
+    <title>Projet</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gradient-to-r from-red-600 via-purple-700 to-blue-600">
+    <header class="bg-gradient-to-r from-red-700 via-purple-800 to-blue-700 flex justify-around">
+        {% if utilisateur %}
+        <a href="/profil"><img class="bg-cover w-32 h-32 border-2 border-dashed border-black rounded-full" src="{{utilisateur.avatar}}"></a>
+        {% endif %}
+        <h1 class="mt-6 text-6xl text-white font-bold"><a href="/">Mon titre</a></h1>
+        <nav class="mt-12 mr-12">
+            <ul class="flex text-white space-x-8">
+                <li><a href="/liste"><button class="bg-indigo-700 px-4 py-2 rounded-lg text-white mb-4">Liste des jeux</button></a></li>
+                {% if utilisateur %}
+                <li><a href="/groupes"><button class="bg-indigo-700 px-4 py-2 rounded-lg text-white mb-4">Groupes</button></a></li>
+                <li><a href="/logout"><button class="bg-indigo-700 px-4 py-2 rounded-lg text-white mb-4">Se déconecter</button></a></li>
+                {% else %}
+                <li><a href="/register"><button class="bg-indigo-700 px-4 py-2 rounded-lg text-white mb-4">S'enregistrer</button></a></li>
+                <li><a href="/login"><button class="bg-indigo-700 px-4 py-2 rounded-lg text-white mb-4">Se connecter</button></a></li>
+                {% endif %}
+            </ul>
+        </nav>
+    </header>
+    <main class="my-12 bg-white rounded-lg w-4/5 mx-auto p-12 shadow-2x1">
+    {%block content%}
+    {%endblock%}
+    </main>
+    <footer class="bg-gradient-to-r from-red-700 via-purple-800 to-blue-700 italic text-white text-center">
+    </footer>
+</body>
+</html>

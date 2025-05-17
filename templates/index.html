@@ -1,0 +1,13 @@
+
+{% extends "base.html" %}
+
+{%block content%}
+<section class="flex flex-wrap justify-center">
+    {% for g in groupes %}
+    <div class="bg-indigo-700 w-64 h-auto m-4">
+        <p class="underline p-2 text-12 md:text-center">{{g.Nom}}</p>
+        <img src="{{g.Photo}}" class="p-2">
+    </div>
+    {% endfor %}
+</section>
+{%endblock%}

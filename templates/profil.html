@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<img src="{{utilisateur.avatar}}" class="mx-auto bg-cover w-64 h-64 border-8 border-dashed border-black rounded-full">
+<p class="text-center text-2xl font-bold my-3">{{utilisateur.pseudo}}
+<p class="text-center italic">Âge : {{utilisateur.age}}</p>
+<p class="text-center italic">Nationalité : {{utilisateur.nationalite}}</p>
+
+{% endblock %}

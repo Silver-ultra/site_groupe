@@ -1,0 +1,31 @@
+
+{% extends "Admin/base_admin.html" %}
+
+{%block content%}
+<h1 class="font-bold text-3xl text-center">GROUPES</h1>
+<table class="w-5/6 mx-auto">
+    <thead>
+        <tr class="[&>*]:border [&>*]:border-black">
+            <th>Nom</th>
+            <th>PDP</th>
+            <th>Admin</th>
+            <th>Public</th>
+            <th>Tag</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for groupe in mes_groupes%}
+        <tr class="[&>*]:border [&>*]:border-black [&>*]:text-center">
+            <td>{{groupe.Nom}}</td>
+            <td><img class="h-24" src="{{groupe.Photo}}"></td>
+            <td>{{groupe.Admin}}</td>
+            <td>{{groupe.Public}}</td>
+            <td>{{groupe.Tag}}</td>
+            <td><a href="/voir">Voir</a></td>
+            <td><a href="/modifier">Modifier</a></td>
+            <td><a href="/supprimergroupe/{{groupe.Nom}}">Supprimer</a></td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{%endblock%}

@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<form action="/login" method="POST">
+    <!-- Bloc "pseudo" -->
+    <div>
+        <label>Pseudo</label>
+        <input type="text" name="input_pseudo" class="border-2 border-black">
+    </div>
+    <!-- Bloc "mdp" -->
+    <div>
+        <label>Mot de passe</label>
+        <input type="password" name="input_mdp" class="border-2 border-black">
+    </div>
+    <button type="submit" class="bg-blue-200 p-3 rouded-full hover:bg-blue-400">Se connecter</button>
+</form>
+
+{% endblock %}
